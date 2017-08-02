@@ -1,0 +1,95 @@
+<IfModule mod_php5.c>
+	php_flag  log_errors on
+	php_value error_log  engine/logs/PHP_errors.log
+	php_flag opcache.enable Off 
+</IfModule>
+<Files PHP_errors.log>
+ Order allow,deny
+ Deny from all
+ Satisfy All
+</Files>
+#AddDefaultCharset UTF-8
+<IfModule mod_expires.c>
+  ExpiresActive On 
+  ExpiresDefault "access plus 4 hours"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType application/x-javascript "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+#  ExpiresByType text/html A90
+#  ExpiresByType text/xml A90
+#  ExpiresByType text/css "access plus 1 week"
+#  ExpiresByType text/plain A62
+  ExpiresByType image/gif "access plus 2 week"
+  ExpiresByType image/jpg "access plus 2 week"
+  ExpiresByType image/jpeg "access plus 2 week"
+  ExpiresByType image/png "access plus 2 week"
+  ExpiresByType image/bmp "access plus 2 week"
+  ExpiresByType application/x-shockwave-flash "access plus 1 day"
+</IfModule>
+<IfModule mod_rewrite.c>
+
+	Options +SymLinksIfOwnerMatch
+	RewriteEngine on
+	
+	#load image form subdomain
+	
+	RewriteRule ^load/img/(.*) ui/get/loadImage.php?arg=$1 [QSA,L]
+	
+	#RewriteRule ^(.*\.(js|css))$ engine/compress/load.php?file=$1
+	
+	RewriteRule ^rss(.*) module/rss/rssFeed.php?arg=$1 [QSA,L]
+	RewriteRule (/)?redirect(/)? engine/plugins/redirect/redirect.php [QSA,L]
+	RewriteRule /print(/)?$ engine/plugins/print/print.php [QSA,L]
+	RewriteRule ^sitemap.xml$ engine/plugins/sitemap/sitemap.php?type=xml [QSA,L]
+	RewriteRule (/)?showvideo(/)? module/gallery/showVideo.php [QSA,L]
+	#ui
+	RewriteRule ^ui/script/(.*) ui/get/jscript.php?arg=$1 [QSA,L]
+	RewriteRule ^ui/font(s)?/(.*) ui/get/font.php?arg=$2 [QSA,L]
+	RewriteRule ^ui/jscript/(.*) ui/get/jscript.php?dir=ui&arg=$1 [QSA,L]
+	RewriteRule ^ui/images/(.*) ui/get/images.php?arg=$1 [QSA,L]
+	RewriteRule ^get/css/(.*) ui/get/css.php?arg=$1 [QSA,L]
+
+	#userfiles
+	RewriteRule ^image/(.*) ui/get/userImages.php?arg=$1 [QSA,L] #old
+	RewriteRule ^get/image(s)?/(.*) ui/get/userImages.php?arg=$1 [QSA,L] #new
+	RewriteRule ^get/file/(.*) engine/plugins/downloader/dl.php?arg=$1 [QSA,L]
+	#RewriteRule ^get/file/(.*) ui/get/userfiles.php?arg=$1 [QSA,L]
+	#RewriteRule ^get/flash/(.*) ui/get/userfiles.php?arg=$1 [QSA,L]
+	
+	#data
+	RewriteRule ^get/data/?(.*) engine/data/data.php?arg=$1  [QSA,L]
+
+	#data
+	RewriteRule ^get/storage/?(.*) engine/bin/classes/Session.class.php?get=1&arg=$1 [QSA,L]
+	RewriteRule ^set/storage/?(.*) engine/bin/classes/Session.class.php?set=1&arg=$1 [QSA,L]
+	
+	#php custom script
+	RewriteRule ^get/action/(.*) ui/get/action.php?arg=$1 [QSA,L]
+	
+	#newsletter
+	RewriteRule ^cmsnewsletter/view/(.*) module/newsletter/viewNewsletter.php?arg=$1 [QSA,L]
+	RewriteRule ^newsletter/view/(.*) module/sendsmailynewsletter/viewNewsletter.php?arg=$1 [QSA,L]
+	
+	#player
+	RewriteRule ^podcast(.*) module/player/podcast.php?arg=$1 [QSA,L]
+	RewriteRule ^spodtronic(.*) module/spodtronic/xml.php?arg=$1 [QSA,L]
+	RewriteRule ^emediate(.*) module/emediate/emediate.php?cu=$1 [QSA,L]
+	###
+	#regForm
+	RewriteRule ^form2pdf(.*) module/form/exportToPDF.php?arg=$1 [QSA,L]
+	RewriteRule ^reg2pdf(.*) module/regForm/exportToPDF.php?arg=$1 [QSA,L]
+	###
+	#invoice#
+	RewriteRule ^invoice/(.*) module/invoice/viewInvoicePDF.php?arg=$1 [QSA,L]
+	#Mobi
+	RewriteRule ^tunniplaan(/)? module/mobi2Bron/tunniplaan.php [QSA,L]
+	#CompuCash
+	RewriteRule ^compuCashImportXml(.*) module/shop/extension/compuCash/exportXml.php?arg=$1 [QSA,L]
+	###
+	RewriteCond %{REQUEST_FILENAME} !-f 
+	RewriteRule ^(.*\.(jpg|jpeg|png|gif|bmp|css|js|sfw|fla|mp3|ico))$ errorPages/404_static.php?arg=$1 [QSA,L]
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule (.*) index.php?arg=$1 [QSA,L]
+</IfModule>

@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Tele2 Slab Regular';
+    src: url('Tele2SlabWeb-Regular.eot');
+    src: url('Tele2SlabWeb-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Tele2SlabWeb-Regular.woff') format('woff'),
+        url('Tele2SlabWeb-Regular.ttf') format('truetype'),
+        url('Tele2SlabWeb-Regular.svg#Tele2SlabWebRegular') format('svg');
+    font-weight: normal!important;
+    font-style: normal !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'Tele2 Slab Regular';
+        src: url('Tele2SlabWeb-Regular.svg#Tele2SlabWebRegular') format('svg');
+
+    }
+}
+@font-face {
+    font-family: 'Tele2 Slab Regular Italic';
+    src: url('Tele2SlabWeb-Italic.eot');
+    src: url('Tele2SlabWeb-Italic.eot?#iefix') format('embedded-opentype'), 
+        url('Tele2SlabWeb-Italic.woff') format('woff'),
+        url('Tele2SlabWeb-Italic.ttf') format('truetype'),
+        url('Tele2SlabWeb-Italic.svg#Tele2SlabWebItalic') format('svg');
+    font-weight: normal!important;
+    font-style: normal !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'Tele2 Slab Regular Italic';
+        src:  url('Tele2SlabWeb-Italic.svg#Tele2SlabWebItalic') format('svg');
+
+    }
+}
+@font-face {
+    font-family: 'Tele2 Slab Bold';
+    src: url('Tele2SlabWeb-Bold.eot');
+    src: url('Tele2SlabWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Tele2SlabWeb-Bold.woff') format('woff'),
+        url('Tele2SlabWeb-Bold.ttf') format('truetype'),
+        url('Tele2SlabWeb-Bold.svg#Tele2SlabWebBold') format('svg');
+    font-weight: normal!important;
+    font-style: normal !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'Tele2 Slab Bold';
+        src:  url('Tele2SlabWeb-Bold.svg#Tele2SlabWebBold') format('svg');
+
+    }
+}
+@font-face {
+    font-family: 'Tele2 Slab Bold Italic';
+    src: url('Tele2SlabWeb-BoldItalic.eot');
+    src: url('Tele2SlabWeb-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Tele2SlabWeb-BoldItalic.woff') format('woff'),
+        url('Tele2SlabWeb-BoldItalic.ttf') format('truetype'),
+        url('Tele2SlabWeb-BoldItalic.svg#Tele2SlabWebBoldItalic') format('svg');
+    font-weight: normal!important;
+    font-style: normal !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'Tele2 Slab Bold Italic';
+        src: url('Tele2SlabWeb-BoldItalic.svg#Tele2SlabWebBoldItalic') format('svg');
+
+    }
+}
+@font-face {
+    font-family: 'Tele2 Slab Heavy';
+    src: url('Tele2SlabWeb-Heavy.eot');
+    src: url('Tele2SlabWeb-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Tele2SlabWeb-Heavy.woff') format('woff'),
+        url('Tele2SlabWeb-Heavy.ttf') format('truetype'),
+        url('Tele2SlabWeb-Heavy.svg#Tele2SlabWebHeavy') format('svg');
+    font-weight: normal!important;
+    font-style: normal !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'Tele2 Slab Bold Italic';
+        src: url('Tele2SlabWeb-Heavy.svg#Tele2SlabWebHeavy') format('svg');
+
+    }
+}
