@@ -545,6 +545,11 @@
     }
 }
 
+.white-shadow {
+    text-shadow: 0px 0px 5px rgba(255,255,255,.7);
+}
+
+
 .xs-white-shadow {
     @media #{$xsmall-only} {
         text-shadow: 0px 0px 5px #fff;
@@ -622,6 +627,20 @@ $font-size: for !default
         }
     }
 }
+
+ $mt: for !default
+    @for $i from -100 through 100  {
+        .mt#{$i} {
+            margin-top:#{$i}px !important;
+        }
+    }
+
+    .xs-br {
+    @media #{$xsmall-only} {
+            display: block !important;  
+        }
+}
+
 
 
 /* TELE2 SPECIAL */
