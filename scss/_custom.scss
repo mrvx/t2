@@ -2,7 +2,6 @@
 @import 'mixins';
 
 
-
 @include screenInfo;
 
 
@@ -25,7 +24,7 @@
 
 
 #campaign_content .container {
-	max-width: 1180px;
+	max-width: 1220px;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -33,17 +32,21 @@
 		padding-left: 30px;	
 		padding-right: 30px;	
 	}
-	@media #{$xlarge-up} {
-		padding-left: 9px;	
-		padding-right: 9px;	
-	}
 }
+
+
 
 
 html {
 	min-width: 320px;
 	padding: 0 !important;
 	margin: 0 !important;
+}
+
+.subpage p span {
+	
+	font-size: 18px !important;
+	
 }
 
 
@@ -67,6 +70,7 @@ html {
 				display: block;		
 			}
 		}
+
 
 	}
 
@@ -138,7 +142,9 @@ html {
 			line-height: 100%;
 			width: 90%;	
 
-			.mac & {
+			.mac & ,
+			.iphone &
+			{
 				top: 55%;	
 			}
 

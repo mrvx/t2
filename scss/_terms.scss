@@ -1,0 +1,91 @@
+
+/* ----->>>  KAMPAANIA Reeglid<<<-------*/
+#campaign_overlay {
+	position: fixed;
+	top: 0;
+	z-index: 201;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	display: none;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	-ms-opacity: 0.8;
+	-webkit-opacity: 0.8;
+}
+
+#campaign_terms, #campaign_terms_2 {
+	background: none repeat scroll 0 0 #FFFFFF;
+	display: none;
+	font-size: 14px;
+	left: 50%;
+	padding: 40px;
+	position: absolute;
+	top: 115px;
+	width: 820px;
+	border: solid 1px #cacaca;
+	display: none;
+	margin-left: -410px;
+	border-radius: 8px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+#campaign_terms_close, #campaign_terms_close_2 {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+#campaign_terms h3, #campaign_terms_2 h3 {
+	margin-bottom: 30px;
+}
+
+#campaign_terms ol, #campaign_terms_2 ol {
+	counter-reset: item;
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+
+#campaign_terms ol > li, #campaign_terms_2 ol > li {
+	counter-increment: item;
+}
+
+#campaign_terms ol ol > li, #campaign_terms_2 ol ol > li {
+	display: block;
+}
+
+#campaign_terms ol ol > li:before, #campaign_terms_2 ol ol > li:before {
+	content: counters(item,".") ". ";
+	margin-left: -20px;
+	float: left;
+}
+
+@media screen and (max-width: 991px) {
+	.tablet-hidden {
+		display: none !important;
+	}
+}
+@media screen and (max-width: 991px) {
+	.tablet-hidden {
+		display: none !important;
+	}
+}
+@media screen and (max-width: 861px) {
+	#campaign_terms, #campaign_terms_2,
+	#camp_places,
+	#campaign_video_overlay {
+		max-width: 100%;
+		left: 10px;
+		right: 10px;
+		width: auto;
+		margin: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	#campaign_terms ol, #campaign_terms_2 ol {
+		padding-left: 20px;
+	}
+}
