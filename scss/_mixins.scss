@@ -23,11 +23,11 @@
 	z-index: 400;
 }
 
-@mixin trans($all, $sec, $ease) {
+@mixin trans($all, $sec) {
 
-	transition: $all $sec $ease;
-	-webkit-transition: $all, $sec, $ease;
-	-ms-transition: $all, $sec, $ease;
+	transition: $all $sec ;
+	-webkit-transition: $all, $sec;
+	-ms-transition: $all, $sec;
 }
 // https://css-tricks.com/snippets/sass/centering-mixin/
 @mixin centerer($horizontal: true, $vertical: true) {
